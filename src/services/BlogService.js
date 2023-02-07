@@ -4,7 +4,7 @@ exports.getAllBlogs = async () => {
   return await Blog.find();
 };
 
-exports.getById = async (id) => {
+exports.getBlogById = async (id) => {
   return Blog.findById(id);
 };
 

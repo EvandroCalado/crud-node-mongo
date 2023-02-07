@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
+const blogRouter = require('./src/routes/BlogRoutes');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -23,6 +24,7 @@ mongoose.connect(
 );
 
 app.use(express.json());
+app.use('/api/blogs', blogRouter);
 
 app.listen(PORT, () => {
   console.log(`Server is running on port: ${PORT}`);
